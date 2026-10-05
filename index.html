@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Compra tu mueble</h1>
+    <h2>Mueble seleccionado: Mesa</h2>
+    <h3>Selecciona el número de cuotas.</h3>
+
+    <input type="number" id="cuotas" placeholder="Ingresa las cuotas.">
+
+    <button onclick="comprar()">Comprar</button>
+
+    <p>Se aplicarán intereses si seleccionas 6 o más cuotas.</p>
+
+    <p id="resultado"></p>
+
+    <script>
+        function comprar() {
+            let cuotas = Number(document.getElementById("cuotas").value);
+
+            let mensaje = cuotas >= 6
+                ? "Hecho. Se aplicarán intereses a tu compra."
+                : "Hecho. No se aplicarán intereses.";
+
+            document.getElementById("resultado").innerHTML = mensaje;
+        }
+    </script>
+
+</body>
+</html>
